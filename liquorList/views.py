@@ -8,7 +8,7 @@ def liquorList(request):
 
 # creating a list of liquor objects from the SQLite db
     liquorList = [];
-    liquorList = Liquor.objects.all()
+    liquorList = Liquor.objects.all().order_by('name')
 
     return render(request, template_name, {"appName" : appName, "liquorList" : liquorList})
 
@@ -18,6 +18,6 @@ def liquorList(request):
 def home(request):
     hometemplate_name = "home.html"
 
-    liquorListAlmostOut = Liquor.objects.filter(numberOfBottles__lt=2)
+    liquorListAlmostOut = Liquor.objects.filter(numberOfBottles__lt=3)
 
     return render(request, hometemplate_name, {"liquorListAlmostOut" : liquorListAlmostOut})

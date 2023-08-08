@@ -1,0 +1,62 @@
+/* variables */
+
+
+html {
+    background-image: url("../templateImages/bar-scene-4-2.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    --containerColor: rgba(245, 245, 220, 0.7);
+    --bs-button-color: black;
+    --bs-btn-hover-bg: grey;
+}
+
+body {
+    background-color: transparent;
+}
+
+.navbarCustom {
+    border-radius: 3px;
+    background-color: var(--containerColor);
+    margin: 0.2em 1em 1em 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.navbarCustom h1 {
+    margin-left: 5%;
+    margin-right: 15%;
+}
+
+.navbarCustom a {
+    margin-left: 1em;
+    text-decoration: none;
+}
+
+.container {
+    border-radius: 3px;
+    background-color: var(--containerColor);
+    padding: 10%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+}
+
+.list-group-item {
+    background-color: bisque;
+    border-color: grey;
+}
+
+.btn-outline-secondary{
+    float: right;
+    color: #212529;
+    background-color: burlywood;
+    margin-top: 1em;
+    padding: 1em;
+}
+

@@ -9,3 +9,6 @@ class Liquor(models.Model):
     name = models.CharField(max_length=50, help_text="Bottle name")
     numberOfBottles = models.IntegerField(help_text="Number on hand")
     brand = models.CharField(max_length=50, help_text="Enter the name of the liquor brand")
+    
+    def __str__(self):
+        return self.name

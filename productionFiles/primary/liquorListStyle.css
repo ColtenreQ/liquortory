@@ -2,7 +2,7 @@
 
 
 html {
-    background-image: url("templateImages/bar-scene-4-2.jpg");
+    background-image: url("../templateImages/bar-scene-4-2.jpg");
     background-repeat: no-repeat;
     background-size:cover;
     --containerColor: rgba(245, 245, 220, 0.7);
@@ -35,7 +35,6 @@ body {
 .navbarCustom a {
     margin-left: 1em;
     text-decoration: none;
-    color: black;
 }
 
 .container {
