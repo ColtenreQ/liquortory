@@ -7,6 +7,7 @@
     <title>LiquorList</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'primary/liquorListStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'general/main.css' %}">
 </head>
 <body>
     <div class="navbarCustom">
@@ -26,9 +27,19 @@
                 </li>
             {% endfor %}
         </ul>
-        <div style="justify-content: end;">
-            <button type="button" class="btn btn-outline-secondary">Add Item +</button>
-        </div>
+    </div>
+    <div class="container">
+        <h3>Add a new item to the Inventory</h3>
+        <form class="liquorForm" action="/Inventory/" method="post">
+            {% csrf_token %}
+                <label class="form-label" >The name of the bottle: </label>
+                {{form.name}}
+                <label class="form-label" >The number of bottles: </label>
+                {{form.numberOfBottles}}
+                <label class="form-label" >The name of the brand: </label>
+                {{form.brand}}
+                <input class="btn btn-outline-secondary" type="submit" value="Submit">
+        </form>
     </div>
 </body>
 </html>

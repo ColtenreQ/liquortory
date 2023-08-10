@@ -40,7 +40,8 @@ body {
 .container {
     border-radius: 3px;
     background-color: var(--containerColor);
-    padding: 10%;
+    margin-top: 2%;
+    padding: 5%;
 
     display: flex;
     flex-direction: column;
@@ -60,3 +61,12 @@ body {
     padding: 1em;
 }
 
+.liquorForm {
+    margin-right: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-top: 1em;
+}

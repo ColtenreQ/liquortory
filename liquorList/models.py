@@ -6,9 +6,9 @@ class Brand(models.Model):
     country = models.CharField(max_length=30, help_text="The country of origin of the company.")
 
 class Liquor(models.Model):
-    name = models.CharField(max_length=50, help_text="Bottle name")
-    numberOfBottles = models.IntegerField(help_text="Number on hand")
-    brand = models.CharField(max_length=50, help_text="Enter the name of the liquor brand")
+    name = models.CharField(max_length=50)
+    numberOfBottles = models.IntegerField()
+    brand = models.CharField(max_length=50)
     
     def __str__(self):
         return self.name
