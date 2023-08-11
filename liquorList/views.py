@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 from .models import Liquor
 
-from .forms import LiquorForm
+from .forms import *
 
 # Function for creating the home page.
 def home(request):
@@ -16,7 +17,6 @@ def home(request):
 # function for creating the liquor list page, to show off liquor inventory
 def liquorList(request):
     template_name = "liquorList.html"
-    appName = request.GET.get("name") or "liquor List"
 
     # creating a list of liquor objects from the SQLite db
     liquorList = [];
@@ -27,5 +27,24 @@ def liquorList(request):
         form.save()
         return HttpResponseRedirect('/Inventory/')
     else:
-        return render(request, template_name, {"appName" : appName, "liquorList" : liquorList, "form": form})
-  
+        return render(request, template_name, {"liquorList" : liquorList, "form": form})
+    
+
+# The function to display a single item for the liquor list.
+def liquorItem(request, pk):
+    liquorItem = Liquor.objects.get(pk=pk)
+
+    form = updateLiquorForm(request.POST or None, instance=liquorItem)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/Inventory/')
+
+    else:
+        print(form.errors)
+        return render(request, "liquorItem.html", {"liquorItem":liquorItem, "form": form})
+    
+def deleteItem(request, pk):
+    liquorItem = Liquor.objects.get(pk=pk)
+    liquorItem.delete()
+    return HttpResponseRedirect("/Inventory/")

@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', liquorList.views.home),
     path('about/', aboutPage.views.aboutPage),
-    path('Inventory/', liquorList.views.liquorList),
-    path('home/', liquorList.views.home)
+    path('Inventory/', liquorList.views.liquorList, name="Inventory"),
+    path('home/', liquorList.views.home),
+    path('liquorItem/<int:pk>/', liquorList.views.liquorItem, name="liquorItem"),
+    path('deleteItem/<int:pk>/', liquorList.views.deleteItem, name="deleteItem")
 ]

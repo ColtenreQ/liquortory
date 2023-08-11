@@ -21,7 +21,9 @@
         <ul class="list-group">
             {% for liquor in liquorList %}
                 <li class="list-group-item">
-                    <h1>{{liquor.name}}</h1>
+                    <a href="{% url 'liquorItem' pk=liquor.pk %}">
+                        <h1>{{liquor.name}}</h1>
+                    </a>
                     <h3>By {{liquor.brand}}</h3>
                     <h3>{{liquor.numberOfBottles}} in Inventory</h3>
                 </li>
@@ -30,7 +32,7 @@
     </div>
     <div class="container">
         <h3>Add a new item to the Inventory</h3>
-        <form class="liquorForm" action="/Inventory/" method="post">
+        <form class="liquorForm" method="post">
             {% csrf_token %}
                 <label class="form-label" >The name of the bottle: </label>
                 {{form.name}}

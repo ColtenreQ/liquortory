@@ -5,8 +5,8 @@ html {
     background-image: url("../templateImages/bar-scene-4-2.jpg");
     background-repeat: no-repeat;
     background-size:cover;
-    --containerColor: rgba(245, 245, 220, 0.7);
-    --bs-button-color: black;
+    --containerColor: rgba(44, 44, 32, 0.788);
+    --bs-button-color: rgb(255, 255, 255);
     --bs-btn-hover-bg: grey;
 }
 
@@ -49,7 +49,7 @@ body {
 }
 
 .list-group-item {
-    background-color: bisque;
+    background-color: rgb(95, 82, 65);
     border-color: grey;
 }
 
