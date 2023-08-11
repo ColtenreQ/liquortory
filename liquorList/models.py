@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 
 class Brand(models.Model):
     name = models.CharField(max_length=50, help_text="Enter the name of the liquor brand.")
@@ -7,7 +8,7 @@ class Brand(models.Model):
 
 class Liquor(models.Model):
     name = models.CharField(max_length=50)
-    numberOfBottles = models.IntegerField()
+    numberOfBottles = models.IntegerField(validators=[MinValueValidator(1)])
     brand = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     

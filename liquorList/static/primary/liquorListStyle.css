@@ -57,7 +57,15 @@ body {
     float: right;
     color: #212529;
     background-color: burlywood;
-    margin-top: 1em;
+    margin-top: 1.3em;
+    margin-bottom: 0;
+    padding: 1em;
+}
+
+.btn-outline-warning {
+    color: #212529;
+    background-color: rgb(230, 84, 84);
+    border-color: #212529;
     padding: 1em;
 }
 
