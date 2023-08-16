@@ -2,3 +2,16 @@ p, h1, h2, h3, li, a, label {
     color: rgb(184, 216, 184);
 
 }
+
+html {
+    background-image: url("../templateImages/barNew.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    --containerColor: rgba(44, 44, 32, 0.788);
+    --bs-button-color: rgb(255, 255, 255);
+    --bs-btn-hover-bg: grey;
+}
+
+body {
+    background-color: transparent;
+}
