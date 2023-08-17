@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django.db import models
-from .models import Liquor
+from .models import Liquor, Brand
 
     
 class LiquorForm(ModelForm):
@@ -15,6 +15,7 @@ class LiquorForm(ModelForm):
         self.fields['brand'].widget.attrs.update({'class':'form-control'})
         self.fields['description'].widget.attrs.update({'class':'form-control'})
         self.fields['description'].required=False
+
 
 class updateLiquorForm(ModelForm):
     class Meta:

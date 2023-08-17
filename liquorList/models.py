@@ -11,7 +11,7 @@ class Brand(models.Model):
 class Liquor(models.Model):
     name = models.CharField(max_length=50)
     numberOfBottles = models.IntegerField(validators=[MinValueValidator(1)])
-    brand = models.CharField(max_length=50)
+    brand = models.ForeignKey('Brand', on_delete=models.CASCADE)
     description = models.TextField(blank=True)
     
     def __str__(self):

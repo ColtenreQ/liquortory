@@ -48,3 +48,9 @@ def deleteItem(request, pk):
     liquorItem = Liquor.objects.get(pk=pk)
     liquorItem.delete()
     return HttpResponseRedirect("/Inventory/")
+
+def brandList(request):
+    return render(request, "brandList.html")
+
+def brandItem(request, pk):
+    return render(request, "brandItem.html")
